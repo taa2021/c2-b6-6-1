@@ -1,0 +1,31 @@
+---
+
+- name: Disable anonymous login
+  ini_file:
+    path: "{{ conf_file }}"
+    section: null
+    no_extra_spaces: yes
+    option: anonymous_enable
+    value: 'NO'
+  notify:
+    - restart vsftpd
+
+- name: Allow local user login
+  ini_file:
+    path: "{{ conf_file }}"
+    section: null
+    no_extra_spaces: yes
+    option: local_enable
+    value: 'YES'
+  notify:
+    - restart vsftpd
+
+- name: Enable uploading
+  ini_file:
+    path: "{{ conf_file }}"
+    section: null
+    no_extra_spaces: yes
+    option: write_enable
+    value: 'YES'
+  notify:
+    - restart vsftpd

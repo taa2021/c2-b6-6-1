@@ -1,0 +1,13 @@
+---
+# vars file for vsftpd
+
+# vsftpd config file
+conf_file: /etc/vsftpd.conf
+
+# the os packages for vsftpd
+packages:
+- vsftpd
+
+# the system services for vsftpd
+services:
+- vsftpd

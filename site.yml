@@ -1,0 +1,8 @@
+---
+- name: Install and configure vsftpd
+  hosts: all
+  remote_user: ubuntu
+  become: yes
+
+  roles:
+    - vsftpd
